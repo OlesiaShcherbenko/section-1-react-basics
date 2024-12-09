@@ -1,10 +1,51 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot } from "react-dom/client";
+import "./index.css";
 
-const root = createRoot(document.getElementById('root'))
-const reactElement = <h1>Hello from JSX!</h1>
+const root = createRoot(document.getElementById("root"));
 
-console.log(reactElement)
+function Header() {
+  return (
+    <header className="header">
+      <img src="src/assets/react-logo.png" className="img" alt="React logo" />
+      <nav>
+        <ul className="nav-list">
+          <li className="nav-list-item">Pricing</li>
+          <li className="nav-list-item">About</li>
+          <li className="nav-list-item">Contact</li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
 
-root.render(
-  reactElement
-)
+function MainContent() {
+  return (
+    <main>
+      <h1>React is ...</h1>
+      <ol>
+        <li></li>
+        <li></li>
+      </ol>
+    </main>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <small>2024</small>
+    </footer>
+  );
+}
+
+function Page() {
+  return (
+    <>
+      <Header />
+      <MainContent />
+      <Footer />
+    </>
+  );
+}
+
+root.render(<Page />);
